@@ -7,16 +7,22 @@ package com.example.filmotheque.entity;
 //
 //@Entity
 public class Genre {
-//    @Id
+    //    @Id
 //    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+    private int id;
+    private String libelle;
 
-    public void setId(Long id) {
+    public Genre() {
+    }
+
+    public Genre(String libelle) {
+        this.libelle = libelle;
+    }
+
+    public Genre(int id, String libelle) {
         this.id = id;
+        this.libelle = libelle;
     }
 
-//    @Id
-    public Long getId() {
-        return id;
-    }
+
 }

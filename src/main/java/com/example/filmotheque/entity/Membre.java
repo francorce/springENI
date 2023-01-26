@@ -10,15 +10,27 @@ public class Membre {
 //    @Id
 //    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
+    private String username;
+    private String mail;
+    private String password;
+    boolean admin;
 
-    public void setId(int id) {
+    public Membre() {
+    }
+    public Membre(String username, String mail, String password, boolean admin) {
+        this.username = username;
+        this.mail = mail;
+        this.password = password;
+        this.admin = admin;
+    }
+
+    public Membre(int id, String username, String mail, String password, boolean admin) {
         this.id = id;
+        this.username = username;
+        this.mail = mail;
+        this.password = password;
+        this.admin = admin;
     }
-
-    public int getId() {
-        return id;
-    }
-
 
 
 }

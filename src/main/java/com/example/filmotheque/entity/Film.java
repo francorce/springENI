@@ -9,21 +9,59 @@ package com.example.filmotheque.entity;
 public class Film {
 //    @Id
 //    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-//    @Id
-    public Long getId() {
-        return id;
-    }
+    private int id;
 
     private String titre;
     private String annee;
     private String duree;
     private String synopsis;
+    private Genre genre;
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public String getAnnee() {
+        return annee;
+    }
+
+    public void setAnnee(String annee) {
+        this.annee = annee;
+    }
+
+    public String getDuree() {
+        return duree;
+    }
+
+    public void setDuree(String duree) {
+        this.duree = duree;
+    }
+
+    public String getSynopsis() {
+        return synopsis;
+    }
+
+    public void setSynopsis(String synopsis) {
+        this.synopsis = synopsis;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
 }
