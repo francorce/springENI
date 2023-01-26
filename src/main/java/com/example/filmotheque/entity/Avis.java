@@ -1,21 +1,21 @@
 package com.example.filmotheque.entity;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
+//
+//import jakarta.persistence.Entity;
+//import jakarta.persistence.GeneratedValue;
+//import jakarta.persistence.GenerationType;
+//import jakarta.persistence.Id;
+//
+//@Entity
 public class Avis {
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+//    @Id
+//    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    @Id
+//    @Id
     public Long getId() {
         return id;
     }
