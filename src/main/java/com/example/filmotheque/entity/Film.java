@@ -12,10 +12,16 @@ public class Film {
     private int id;
 
     private String titre;
-    private String annee;
+    private int annee;
     private String duree;
     private String synopsis;
     private Genre genre;
+
+    public Film(String title, String director, int year) {
+        this.titre=title;
+        this.annee=year;
+        this.synopsis=director;
+    }
 
     public int getId() {
         return id;
@@ -33,11 +39,11 @@ public class Film {
         this.titre = titre;
     }
 
-    public String getAnnee() {
+    public int getAnnee() {
         return annee;
     }
 
-    public void setAnnee(String annee) {
+    public void setAnnee(int annee) {
         this.annee = annee;
     }
 
