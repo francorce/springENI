@@ -19,4 +19,11 @@ public class Film {
     public Long getId() {
         return id;
     }
+
+    private String titre;
+    private String annee;
+    private String duree;
+    private String synopsis;
+
+
 }
