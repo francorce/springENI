@@ -8,6 +8,7 @@ public class ConnexionController {
 
     @GetMapping("/connexion")
     public String connexion(){
+
         return "connexion";
     }
 
