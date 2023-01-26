@@ -9,15 +9,16 @@ import jakarta.persistence.Id;
 public class Membre {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+    private int id;
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    @Id
-    public Long getId() {
+    public int getId() {
         return id;
     }
+
+
 
 }
