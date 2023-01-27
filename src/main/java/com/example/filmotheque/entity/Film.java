@@ -1,26 +1,31 @@
 package com.example.filmotheque.entity;
 
-//import jakarta.persistence.Entity;
-//import jakarta.persistence.GeneratedValue;
-//import jakarta.persistence.GenerationType;
-//import jakarta.persistence.Id;
-//
-//@Entity
+import jakarta.persistence.*;
+import org.springframework.beans.factory.annotation.Autowired;
+
+@Entity
+@Table(name = "FILMS")
 public class Film {
-//    @Id
-//    @GeneratedValue(strategy= GenerationType.AUTO)
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
 
     private String titre;
     private int annee;
-    private String duree;
+    private int duree;
     private String synopsis;
-    private Genre genre;
+//    private Genre genre;
 
-    public Film(String title, String director, int year) {
-        this.titre=title;
-        this.annee=year;
-        this.synopsis=director;
+    public Film(String titre, int duree, int annee, String synopsis) {
+        this.titre=titre;
+        this.duree=duree;
+        this.annee=annee;
+        this.synopsis=synopsis;
+    }
+
+    public Film() {
+
     }
 
     public int getId() {
@@ -47,11 +52,11 @@ public class Film {
         this.annee = annee;
     }
 
-    public String getDuree() {
+    public int getDuree() {
         return duree;
     }
 
-    public void setDuree(String duree) {
+    public void setDuree(int duree) {
         this.duree = duree;
     }
 
@@ -63,11 +68,11 @@ public class Film {
         this.synopsis = synopsis;
     }
 
-    public Genre getGenre() {
-        return genre;
-    }
-
-    public void setGenre(Genre genre) {
-        this.genre = genre;
-    }
+//    public Genre getGenre() {
+//        return genre;
+//    }
+//
+//    public void setGenre(Genre genre) {
+//        this.genre = genre;
+//    }
 }
