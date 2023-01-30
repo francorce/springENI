@@ -17,15 +17,30 @@ public class Film {
     private String synopsis;
 //    private Genre genre;
 
-    public Film(String titre, int duree, int annee, String synopsis) {
+    //add a ManyToOne relationship with Genre
+    @ManyToOne
+    @JoinColumn(name = "genre_id")
+    private Genre genre;
+
+
+    public Film(String titre, int duree, Genre genre, int annee, String synopsis) {
         this.titre=titre;
         this.duree=duree;
         this.annee=annee;
         this.synopsis=synopsis;
+        this.genre=genre;
     }
 
     public Film() {
 
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
     }
 
     public int getId() {
