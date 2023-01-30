@@ -9,7 +9,7 @@ public class Film {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
     private String titre;
     private int annee;

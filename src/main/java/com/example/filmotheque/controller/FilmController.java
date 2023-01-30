@@ -3,9 +3,11 @@ package com.example.filmotheque.controller;
 import com.example.filmotheque.bll.FilmService;
 import com.example.filmotheque.bll.FilmServiceImpl;
 import com.example.filmotheque.entity.Film;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 
 import java.util.List;
@@ -14,7 +16,7 @@ import java.util.List;
 public class FilmController {
 
     @GetMapping("/")
-    public String accueil(){
+    public String accueil() {
 
         return "accueil";
     }
@@ -27,12 +29,18 @@ public class FilmController {
 
     @Autowired
     private FilmService filmService;
+
     @GetMapping("/list")
-    public String list(Model model){
+    public String list(Model model) {
         model.addAttribute("films", filmService.findAll());
         return "listefilms";
     }
 
 
+    @PostMapping("/ajoutFilm")
+    public String ajouterFilm(@Valid @ModelAttribute Film film, BindingResult result) {
+        filmService.addFilm(film);
+        return "redirect:/listefilms";
+    }
 
 }
