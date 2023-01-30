@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Films</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"/>
 
 </head>
@@ -11,7 +11,8 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">Filmotheque ENI</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -23,13 +24,16 @@
                     <a class="nav-link" href="#">Link</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
                         Dropdown
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Action</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
@@ -50,20 +54,23 @@
 
 <h1 class="mt-2">Les films</h1>
 <center>
-<div th:each="film:${films}" style="display:inline-block;">
+    <div th:each="film:${films}"  style="display:inline-block;">
+<!--        th:each="genre:${@filmService.findAllGenres()}"-->
+            <div class="card" style="width: 18rem;">
+                <img src="https://www.viewhotels.jp/ryogoku/wp-content/uploads/sites/9/2020/03/test-img.jpg"
+                     class="card-img-top" alt="...">
+                <div class="card-body">
 
+                    <h5 th:text="${film.titre}" class="card-title">Card title</h5>
 
-<div class="card" style="width: 18rem;">
-    <img src="https://www.viewhotels.jp/ryogoku/wp-content/uploads/sites/9/2020/03/test-img.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
+                    <h6 th:text="${film.genre?.libelle}"></h6>
 
-        <h5 th:text="${film.titre}" class="card-title">Card title</h5>
-        <p th:text="${film.synopsis}" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <h6 th:text="${film.annee}"></h6>
+                    <p th:text="${film.synopsis}" class="card-text">Some quick example text to build on the card title
+                        and make up the bulk of the card's content.</p>
+                    <h6 th:text="${film.annee}"></h6>
+                </div>
+        </div>
     </div>
-</div>
-
-</div>
 </center>
 </body>
 </html>
