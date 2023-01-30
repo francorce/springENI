@@ -37,10 +37,16 @@ public class FilmController {
     }
 
 
-    @PostMapping("/ajoutFilm")
+    @GetMapping("/ajoutFilm")
+    public String ajout(){
+
+        return "formulaireFilm";
+    }
+
+    @PostMapping("/ajoutFilms")
     public String ajouterFilm(@Valid @ModelAttribute Film film, BindingResult result) {
         filmService.addFilm(film);
-        return "redirect:/listefilms";
+        return "redirect:/list";
     }
 
 }
